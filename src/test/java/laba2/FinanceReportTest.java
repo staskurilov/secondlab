@@ -30,5 +30,6 @@ public class FinanceReportTest {
         Payment notElephant2 = new Payment("Второй Вторяк Вторякевич", 1, 1, 2001, 11111);
         FinanceReport financeReport = new FinanceReport(new Payment[]{notElephant1,notElephant2},"Директоров Директор Директорович","11.09.2011");
         Assertions.assertTrue(financeReport.toString().contains("Директоров Директор Директорович"));
+        System.out.println(financeReport);
     }
 }

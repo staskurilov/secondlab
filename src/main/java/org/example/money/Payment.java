@@ -50,19 +50,17 @@ public class Payment {
         this.sumPay = sumPay;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        } else if (o != null && this.getClass() == o.getClass()) {
-            Payment payment = (Payment)o;
-            return this.day == payment.day && this.month == payment.month && this.year == payment.year && this.sumPay == payment.sumPay && Objects.equals(this.fio, payment.fio);
-        } else {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Payment payment = (Payment) o;
+        return day == payment.day && month == payment.month && year == payment.year && sumPay == payment.sumPay && Objects.equals(fio, payment.fio);
     }
 
+    @Override
     public int hashCode() {
-        return Objects.hash(this.fio, this.day, this.month, this.year, this.sumPay);
+        return Objects.hash(fio, day, month, year, sumPay);
     }
 
     public String toString() {
